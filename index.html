@@ -7,16 +7,20 @@
 
 	<style>
 		.Wrapper {
+			position: fixed;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			margin: auto;
-			width: 90%;
+
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
 		}
 
 		.Pic {
 			width: 500px;
 			height: 500px;
+			cursor: pointer;
 		}
 
 		.Text {
@@ -33,6 +37,11 @@
 			width: 100%;
 			height: 100%;
 		}
+
+		.Card {
+			display: none;
+			width: 80%;
+		}
 	</style>
 
 </head>
@@ -46,11 +55,38 @@
 	</div>
 
 	<div class="Wrapper">
-		<img class="Pic" src="frankenstein.gif" alt="frankenstein" />
-		<p class="Text">
+		<img class="Pic" src="frankenstein.gif" alt="frankenstein" id="cover" />
+		<p class="Text" id="cover_text">
 			"Beware; for I am fearless, and therefore powerful."
 		</p>
+		<div id="card" class="Card">
+			<img src="tree_cute.gif" style="width: 100%; height: auto" alt="cute tree" />
+			<p style="margin: 0;">
+				<span style="color: red; font-size: 48px; margin-right: 2rem;">Merry</span> <span
+					style="color: green; font-size: 36px; margin-right: 2rem;">Christmas</span> <span
+					style="font-weight: bold; font-size: 24px;">Shanny!</span><br> Sadly... there was
+				no way my gift for you was going to come in time. It's shipped to my brother, so I'll have him give it to you
+				when it arrives! Anyway, I'm so so happy you could join us again for Christmas this year. I feel so grateful to
+				get to know you better. You're so good to my brother, and it's clear as day that you make him so happy. Thank
+				you <3 </p>
+		</div>
 	</div>
+
+	<script>
+
+		console.log("Running script!");
+		const cover = document.getElementById("cover");
+		const cover_text = document.getElementById("cover_text");
+		const card = document.getElementById("card");
+
+		const onCoverClick = (e) => {
+			cover.style.display = "none";
+			cover_text.style.display = "none";
+			card.style.display = "block";
+		}
+
+		cover.addEventListener("mousedown", onCoverClick);
+	</script>
 </body>
 
 </html>
