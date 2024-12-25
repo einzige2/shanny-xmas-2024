@@ -6,7 +6,7 @@
 	<title>Merry Christmas Shanny!</title>
 
 	<style>
-		.Wrapper {
+		.Cover {
 			position: fixed;
 			display: flex;
 			flex-direction: column;
@@ -21,6 +21,7 @@
 			width: 500px;
 			height: 500px;
 			cursor: pointer;
+			margin-bottom: 32px;
 		}
 
 		.Text {
@@ -44,10 +45,17 @@
 			height: 100%;
 		}
 
-		.Card {
+		.Content {
 			display: none;
-			width: 80%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			flex-direction: column;
+			gap: 16px;
+			align-items: center;
+			width: 100%;
 			font-size: 48px;
+			padding: 1rem;
 
 			@media (min-width: 1250px) {
 				font-size: 16px;
@@ -56,6 +64,8 @@
 
 		.Merry {
 			font-size: 96px;
+			color: red;
+			margin-right: 2rem;
 
 			@media (min-width: 1250px) {
 				font-size: 48px;
@@ -64,6 +74,8 @@
 
 		.Christmas {
 			font-size: 72px;
+			color: green;
+			margin-right: 2rem;
 
 			@media (min-width: 1250px) {
 				font-size: 36px;
@@ -72,6 +84,7 @@
 
 		.Shanny {
 			font-size: 48px;
+			font-weight: 1000;
 
 			@media (min-width: 1250px) {
 				font-size: 24px;
@@ -84,40 +97,44 @@
 <body>
 	<div class="Decoration">
 		<img src="cake.gif" alt="christmas cake"
-			style="position: absolute; top: 1rem; left: 1rem; width: 64px; height: 64px" />
+			style="position: absolute; top: 2rem; left: 2rem; width: 64px; height: 64px" />
 		<img src="cake.gif" alt="christmas cake"
-			style="position: absolute; top: 1rem; right: 1rem; width: 64px; height: 64px" />
+			style="position: absolute; top: 2rem; right: 2rem; width: 64px; height: 64px" />
+		<img src="cake.gif" alt="christmas cake"
+			style="position: absolute; bottom: 2rem; left: 2rem; width: 64px; height: 64px" />
+		<img src="cake.gif" alt="christmas cake"
+			style="position: absolute; bottom: 2rem; right: 2rem; width: 64px; height: 64px" />
 	</div>
 
-	<div class="Wrapper">
-		<img class="Pic" src="frankenstein.gif" alt="frankenstein" id="cover" />
-		<p class="Text" id="cover_text">
+	<div class="Cover" id="cover">
+		<img class="Pic" src="frankenstein.gif" alt="frankenstein" />
+		<p class="Text">
 			"Beware; for I am fearless, and therefore powerful."
 		</p>
-		<div id="card" class="Card">
-			<img src="tree_cute.gif" style="width: 100%; height: auto" alt="cute tree" />
-			<p style="margin: 0;">
-				<span style="color: red; font-size: 48px; margin-right: 2rem;">Merry</span> <span
-					style="color: green; font-size: 36px; margin-right: 2rem;">Christmas</span> <span
-					style="font-weight: bold; font-size: 24px;">Shanny!</span><br> Sadly... there was
-				no way my gift for you was going to come in time. It's shipped to my brother, so I'll have him give it to you
-				when it arrives! Anyway, I'm so so happy you could join us again for Christmas this year. I feel so grateful to
-				get to know you better. You're so good to my brother, and it's clear as day that you make him so happy. Thank
-				you <3 </p>
-		</div>
+		<p style="font-style: italic; font-size: 24px;">- Mary Shelley</p>
+	</div>
+	<div id="content" class="Content">
+		<img src="tree_cute.gif" style="width: 100%; height: auto" alt="cute tree" />
+		<p style="padding: 1rem; margin-right: 2rem; text-align: justify;">
+			<span class="Merry">Merry</span> <span class="Christmas">Christmas</span> <span class="Shanny">Shanny!</span>
+			<br>
+			<br>
+			Sadly... there was no way my gift for you was going to come in time. It's shipped to my brother, so I'll have him
+			give it to you
+			when it arrives! Anyway, I'm so so happy you could join us again for Christmas this year. I feel so grateful to
+			get to know you better. You're so good to my brother, and it's clear as day that you make him so happy. Thank
+			you <3 </p>
 	</div>
 
 	<script>
 
 		console.log("Running script!");
 		const cover = document.getElementById("cover");
-		const cover_text = document.getElementById("cover_text");
-		const card = document.getElementById("card");
+		const content = document.getElementById("content");
 
 		const onCoverClick = (e) => {
 			cover.style.display = "none";
-			cover_text.style.display = "none";
-			card.style.display = "block";
+			content.style.display = "block";
 		}
 
 		cover.addEventListener("mousedown", onCoverClick);
