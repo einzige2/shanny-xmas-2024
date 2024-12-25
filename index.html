@@ -17,7 +17,7 @@
 			transform: translate(-50%, -50%);
 		}
 
-		.Pic {
+		.CoverPic {
 			width: 500px;
 			height: 500px;
 			cursor: pointer;
@@ -59,6 +59,10 @@
 
 			@media (min-width: 1250px) {
 				font-size: 16px;
+				width: 40%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 			}
 		}
 
@@ -90,6 +94,15 @@
 				font-size: 24px;
 			}
 		}
+
+		.CardPic {
+			width: 100%;
+			height: auto;
+
+			@media (min-width: 1250px) {
+				width: 480px;
+			}
+		}
 	</style>
 
 </head>
@@ -107,14 +120,14 @@
 	</div>
 
 	<div class="Cover" id="cover">
-		<img class="Pic" src="frankenstein.gif" alt="frankenstein" />
+		<img class="CoverPic" src="frankenstein.gif" alt="frankenstein" />
 		<p class="Text">
 			"Beware; for I am fearless, and therefore powerful."
 		</p>
 		<p style="font-style: italic; font-size: 24px;">- Mary Shelley</p>
 	</div>
 	<div id="content" class="Content">
-		<img src="tree_cute.gif" style="width: 100%; height: auto" alt="cute tree" />
+		<img src="tree_cute.gif" class="CardPic" alt="cute tree" />
 		<p style="padding: 1rem; margin-right: 2rem; text-align: justify;">
 			<span class="Merry">Merry</span> <span class="Christmas">Christmas</span> <span class="Shanny">Shanny!</span>
 			<br>
